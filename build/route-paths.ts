@@ -429,6 +429,7 @@ export type RoutePath =
   | `/caixin/weekly`
   | `/caixinglobal/latest`
   | `/camchina/:id?`
+  | `/canada.ca/news/:lang/:department?`
   | `/cankaoxiaoxi/:id?`
   | `/cankaoxiaoxi/column/:id?`
   | `/capitalmind/insights`
@@ -436,6 +437,7 @@ export type RoutePath =
   | `/cara/likes/:user`
   | `/cara/portfolio/:user`
   | `/cara/timeline/:user`
+  | `/carousell/:region/:keyword`
   | `/cartoonmad/comic/:id`
   | `/cas/cg/:caty?`
   | `/cas/genetics/:path{.+}`
@@ -728,6 +730,7 @@ export type RoutePath =
   | `/dgtle/article/:id?/:pushed?`
   | `/dgtle/feed`
   | `/dgtle/news/:id?`
+  | `/dgtle/tag/:id`
   | `/dgtle/video`
   | `/dgut/jwb/:type?`
   | `/dhu/jiaowu/news/:type?`
@@ -2296,6 +2299,7 @@ export type RoutePath =
   | `/reactnewsletter/`
   | `/readhub/:category?`
   | `/readhub/daily`
+  | `/readsomethingwonderful/`
   | `/readwise/list/:routeParams?`
   | `/rebase/geekdaily`
   | `/remnote/changelog`
@@ -2627,6 +2631,7 @@ export type RoutePath =
   | `/techcrunch/news`
   | `/techflowpost/`
   | `/techflowpost/express`
+  | `/techflowpost/featured/:category?`
   | `/techpowerup/`
   | `/techpowerup/review/:keyword?`
   | `/techsir/`
@@ -2653,6 +2658,7 @@ export type RoutePath =
   | `/theatlantic/:category`
   | `/theblock/category/:category`
   | `/theblockbeats/:channel?/:original?`
+  | `/thebrain/blog`
   | `/thecover/channel/:id?`
   | `/thegadgetflow/:category?`
   | `/thegradient/posts`
