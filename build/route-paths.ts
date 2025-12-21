@@ -392,6 +392,7 @@ export type RoutePath =
   | `/bsky/profile/:handle/feed/:space/:routeParams?`
   | `/bt0/mv/:number/:domain?`
   | `/bt0/tlist/:sc/:domain?`
+  | `/btbtla/gxlist`
   | `/btzj/:category?`
   | `/buaa/jiaowu/:cddm?`
   | `/buaa/lib/space/:path{newbook.*}`
@@ -2948,6 +2949,7 @@ export type RoutePath =
   | `/wzu/news/:type?`
   | `/x-mol/news/:tag?`
   | `/x-mol/paper/:type/:magazine`
+  | `/x410/news`
   | `/x6d/:id?`
   | `/xaufe/jiaowu/:category?`
   | `/xaut/index/:category?`
