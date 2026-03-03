@@ -223,6 +223,7 @@ export type RoutePath =
   | `/arcteryx/outlet/:country/:gender`
   | `/arcteryx/regear/new-arrivals`
   | `/artstation/:handle`
+  | `/aschmelyun/blog`
   | `/asiafruitchina/categories/:category?`
   | `/asiafruitchina/news`
   | `/asianfanfics/tag/:tag/:type`
@@ -1081,6 +1082,8 @@ export type RoutePath =
   | `/gcores/tags/:id/:tab?`
   | `/gcores/topics/:id/recommend`
   | `/gcores/topics/recommend`
+  | `/gcores/users/:id/radios`
+  | `/gcores/users/:id/talks`
   | `/gcores/videos`
   | `/gdsrx/:id?`
   | `/gdufs/news`
