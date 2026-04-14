@@ -1336,6 +1336,9 @@
   "/cahkms/:category?": [
     "nczitzk"
   ],
+  "/caicai/blog/:lang?": [
+    "TonyRL"
+  ],
   "/caijing/roll": [
     "TonyRL"
   ],
