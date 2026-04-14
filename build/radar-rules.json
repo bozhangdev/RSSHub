@@ -5290,18 +5290,16 @@
   },
   "android.com": {
     "_name": "Android",
-    "developer": [
+    "source": [
       {
-        "title": "SDK Platform Tools release notes",
+        "title": "Pixel Update Bulletins",
         "docs": "https://docs.rsshub.app/routes/program-update",
         "source": [
-          "/studio/releases/platform-tools",
+          "/docs/security/bulletin/pixel",
           "/"
         ],
-        "target": "/android/platform-tools-releases"
-      }
-    ],
-    "source": [
+        "target": "/android/pixel-update-bulletin"
+      },
       {
         "title": "Security Bulletins",
         "docs": "https://docs.rsshub.app/routes/program-update",
@@ -5311,6 +5309,17 @@
           "/"
         ],
         "target": "/android/security-bulletin"
+      }
+    ],
+    "developer": [
+      {
+        "title": "SDK Platform Tools release notes",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/studio/releases/platform-tools",
+          "/"
+        ],
+        "target": "/android/platform-tools-releases"
       }
     ]
   },
