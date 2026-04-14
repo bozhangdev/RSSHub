@@ -34154,7 +34154,7 @@
           "/:category",
           "/"
         ],
-        "target": "/nikkeiparams=>{if(params.category&&params.type){return`/nikkei/cn/cn/${params.category}/${params.type.replace(\".html\",\"\")}`}else if(params.category&&!params.type){return`/nikkei/cn/cn/${params.category.replace(\".html\",\"\")}`}else{return`/nikkei/cn/cn`}}"
+        "target": "/nikkeiparams=>{if(params.category&&params.type){return`/nikkei/cn/cn/${params.category}/${params.type.replace(\".html\",\"\")}`}else if(params.category&&!params.type){return`/nikkei/cn/cn/${params.category.replace(\".html\",\"\")}`}else{return\"/nikkei/cn/cn\"}}"
       }
     ],
     "zh.cn": [
@@ -34166,7 +34166,7 @@
           "/:category",
           "/"
         ],
-        "target": "/nikkeiparams=>{if(params.category&&params.type){return`/nikkei/cn/zh/${params.category}/${params.type.replace(\".html\",\"\")}`}else if(params.category&&!params.type){return`/nikkei/cn/zh/${params.category.replace(\".html\",\"\")}`}else{return`/nikkei/cn/zh`}}"
+        "target": "/nikkeiparams=>{if(params.category&&params.type){return`/nikkei/cn/zh/${params.category}/${params.type.replace(\".html\",\"\")}`}else if(params.category&&!params.type){return`/nikkei/cn/zh/${params.category.replace(\".html\",\"\")}`}else{return\"/nikkei/cn/zh\"}}"
       }
     ],
     "www": [
