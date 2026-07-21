@@ -4942,27 +4942,6 @@
       }
     ]
   },
-  "pawchive.st": {
-    "_name": "Pawchive",
-    ".": [
-      {
-        "title": "Posts",
-        "docs": "https://docs.rsshub.app/routes/anime",
-        "source": [
-          "/"
-        ],
-        "target": "/pawchive/:service/:id"
-      },
-      {
-        "title": "Posts",
-        "docs": "https://docs.rsshub.app/routes/anime",
-        "source": [
-          "/:service/user/:id"
-        ],
-        "target": "/pawchive/:service/:id"
-      }
-    ]
-  },
   "pixabay.com": {
     "_name": "Pixabay",
     ".": [
@@ -34342,6 +34321,27 @@
       }
     ]
   },
+  "pawchive.pw": {
+    "_name": "Pawchive",
+    ".": [
+      {
+        "title": "Posts",
+        "docs": "https://docs.rsshub.app/routes/anime",
+        "source": [
+          "/"
+        ],
+        "target": "/pawchive/:service/:id"
+      },
+      {
+        "title": "Posts",
+        "docs": "https://docs.rsshub.app/routes/anime",
+        "source": [
+          "/:service/user/:id"
+        ],
+        "target": "/pawchive/:service/:id"
+      }
+    ]
+  },
   "pconline.com.cn": {
     "_name": "太平洋科技",
     ".": [
@@ -41994,7 +41994,7 @@
     "_name": "小宇宙",
     ".": [
       {
-        "title": "Unknown",
+        "title": "发现",
         "docs": "https://docs.rsshub.app/routes/multimedia",
         "source": [
           "/"
