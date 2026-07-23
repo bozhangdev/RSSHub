@@ -5018,6 +5018,19 @@
       }
     ]
   },
+  "scmuseum.cn": {
+    "_name": "Sichuan Museum",
+    "www": [
+      {
+        "title": "Exhibition",
+        "docs": "https://docs.rsshub.app/routes/travel",
+        "source": [
+          "/Visit/Exhibition"
+        ],
+        "target": "/scmuseum/exhibition"
+      }
+    ]
+  },
   "seekingalpha.com": {
     "_name": "Seeking Alpha",
     ".": [
@@ -13865,6 +13878,27 @@
           "/site/isde/:lang"
         ],
         "target": "/canada.ca/news/:lang/departmentofindustry"
+      }
+    ]
+  },
+  "capitalmuseum.org.cn": {
+    "_name": "Capital Museum",
+    "www": [
+      {
+        "title": "Exhibitions",
+        "docs": "https://docs.rsshub.app/routes/travel",
+        "source": [
+          "/exhibition"
+        ],
+        "target": "/capitalmuseum/exhibition"
+      },
+      {
+        "title": "News",
+        "docs": "https://docs.rsshub.app/routes/travel",
+        "source": [
+          "/news"
+        ],
+        "target": "/capitalmuseum/news"
       }
     ]
   },
