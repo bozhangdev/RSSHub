@@ -32,14 +32,14 @@ importers:
   .:
     dependencies:
       '@bbob/html':
-        specifier: 4.3.1
-        version: 4.3.1
+        specifier: 4.4.0
+        version: 4.4.0
       '@bbob/plugin-helper':
-        specifier: 4.3.1
-        version: 4.3.1
+        specifier: 4.4.0
+        version: 4.4.0
       '@bbob/preset-html5':
-        specifier: 4.3.1
-        version: 4.3.1
+        specifier: 4.4.0
+        version: 4.4.0
       '@googleapis/youtube':
         specifier: 33.0.0
         version: 33.0.0
@@ -402,8 +402,8 @@ importers:
         specifier: 11.4.0
         version: 11.4.0
       globals:
-        specifier: 17.7.0
-        version: 17.7.0
+        specifier: 17.8.0
+        version: 17.8.0
       husky:
         specifier: 9.1.7
         version: 9.1.7
@@ -553,23 +553,23 @@ packages:
     resolution: {integrity: sha512-4zBIxpPzowiZpusoFkyGVwakdRJUyuH5PxQ/PrqghfdFWWasvnCdPfQXHrenDai+gyLARulZjZowCOj6fjT4pA==}
     engines: {node: '>=6.9.0'}
 
-  '@bbob/core@4.3.1':
-    resolution: {integrity: sha512-qNS5wNY2oJROV5CQ2e29e9dBz4ZuSO7JcciBXM2yDHvKFUYl+J4o8DxOsugce6z2cFpGz6F4J7vJN7X+6ujWiQ==}
+  '@bbob/core@4.4.0':
+    resolution: {integrity: sha512-4rLEjFsbMECLsUsz8SCwP/W2LomPAT1Pj5KBfIF3RDBdQAaU0nSLOauIDhnU17zxUZBlvXsncZmZTWTFNqXCNQ==}
 
-  '@bbob/html@4.3.1':
-    resolution: {integrity: sha512-W1qFvBZwhpGkZBNfeRpUFsoF492BlfNmgdh5iczg7B/PDULdOPH5lPLtT/6ZNpyx/xo6/DBssl9YtEO/bm15hw==}
+  '@bbob/html@4.4.0':
+    resolution: {integrity: sha512-cPNPMOq5akCexag3XerJLQ7A9TGdUdPPACzlZniMj2JGGgBsgGq9kIHm+6huQswvveQDd39dIkKUlcFpK1hQZg==}
 
-  '@bbob/parser@4.3.1':
-    resolution: {integrity: sha512-BqDo8PDLcVLhFvOMdLmeaWk5qqD8E1bEdvzSJQuJC/U1XFs1tMC4lwZ4oPBFmZCeCLNsYFawqjP/S5MDdr7/Tg==}
+  '@bbob/parser@4.4.0':
+    resolution: {integrity: sha512-5w0VnGCSY3JYGs1m4AfR5a3soBoc8HB3EUCYneXQqP1KPUvFuBKDc5XWGQ5EeXl6QuM03oS39HO19fhY9GgzXA==}
 
-  '@bbob/plugin-helper@4.3.1':
-    resolution: {integrity: sha512-0gyhW5sU270iCBvaRO1jYDTs1oGHu913yB9tqxPO9zT5OIDhu47PwensdJ7EuZwgYKEyQ4zZZ+1jvDzkubjdyQ==}
+  '@bbob/plugin-helper@4.4.0':
+    resolution: {integrity: sha512-1X9El64z/g+4vMKx+CnLc2O1No/KqRRU4Ku1PLYN1CD6OmJk/T1sQ3dlLAzSjV6gzZ2fSa8/endhZpf2ULKBLA==}
 
-  '@bbob/preset-html5@4.3.1':
-    resolution: {integrity: sha512-6Yn8kOrBWt/2u4ZUt7nSTzWP+xvTaH4TlAds6p+BcBRbs4Ov2f1zkRgCh1JlckMXwhH9q9CGF0wn6w8bkUYcFA==}
+  '@bbob/preset-html5@4.4.0':
+    resolution: {integrity: sha512-hvYpHCRxo2lhfGXgI8TT4BWpVCJM5Bxtgc2XL1Pr77lmTb6yTVG+nNNuNxBJ3Mz3K0XPzaOhlS1YkTLpf1vYfA==}
 
-  '@bbob/preset@4.3.1':
-    resolution: {integrity: sha512-we6ITgrwciNIdpZRRJl4y3OOEbXEEVA21895JUInvYXevZBrIgIAvO502qlEYQtqhJqQ1HxY5xyhDjZ9rEYQHg==}
+  '@bbob/preset@4.4.0':
+    resolution: {integrity: sha512-N0k1pS9ywv6qbOiLAoM6RH1yOJtIHDSM7rHWmtfe+FyWjHnP7Icyn4McLIra2ZHlutJIVY+05UGAf375ByRzGw==}
 
   '@bbob/types@4.4.0':
     resolution: {integrity: sha512-d79ov/IQFW5gEAllrK48xqI/IDs6y31F4gXRUX3d7KYN+r6EaRsChjMgv0wPppZovUL2/eECFOe82sqAa0HF7g==}
@@ -4203,8 +4203,8 @@ packages:
     resolution: {integrity: sha512-7ACyT3wmyp3I61S4fG682L0VA2RGD9otkqGJIwNUMF1SWUombIIk+af1unuDYgMm082aHYwD+mzJvv9Iu8dsgg==}
     engines: {node: '>=18'}
 
-  globals@17.7.0:
-    resolution: {integrity: sha512-Czmyns5dUsq4seFBR/Kdydhmo8y9kC79hiSkPn0YcGtNnYWnrgt0vjrSjx9tspoDGWm2CMarffRuLjM4xUz8xg==}
+  globals@17.8.0:
+    resolution: {integrity: sha512-Zz/LMDZScFmkakeL2cTHzf+PbWKdpU3uclqkZT7TjDG58j5WPt0PpA+n9uPI24fZtlw07q0OtEi84K+umsRzqQ==}
     engines: {node: '>=18'}
 
   globrex@0.1.2:
@@ -6611,36 +6611,36 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@bbob/core@4.3.1':
+  '@bbob/core@4.4.0':
     dependencies:
-      '@bbob/parser': 4.3.1
-      '@bbob/plugin-helper': 4.3.1
+      '@bbob/parser': 4.4.0
+      '@bbob/plugin-helper': 4.4.0
       '@bbob/types': 4.4.0
 
-  '@bbob/html@4.3.1':
+  '@bbob/html@4.4.0':
     dependencies:
-      '@bbob/core': 4.3.1
-      '@bbob/plugin-helper': 4.3.1
+      '@bbob/core': 4.4.0
+      '@bbob/plugin-helper': 4.4.0
       '@bbob/types': 4.4.0
 
-  '@bbob/parser@4.3.1':
+  '@bbob/parser@4.4.0':
     dependencies:
-      '@bbob/plugin-helper': 4.3.1
+      '@bbob/plugin-helper': 4.4.0
       '@bbob/types': 4.4.0
 
-  '@bbob/plugin-helper@4.3.1':
+  '@bbob/plugin-helper@4.4.0':
     dependencies:
       '@bbob/types': 4.4.0
 
-  '@bbob/preset-html5@4.3.1':
+  '@bbob/preset-html5@4.4.0':
     dependencies:
-      '@bbob/plugin-helper': 4.3.1
-      '@bbob/preset': 4.3.1
+      '@bbob/plugin-helper': 4.4.0
+      '@bbob/preset': 4.4.0
       '@bbob/types': 4.4.0
 
-  '@bbob/preset@4.3.1':
+  '@bbob/preset@4.4.0':
     dependencies:
-      '@bbob/plugin-helper': 4.3.1
+      '@bbob/plugin-helper': 4.4.0
       '@bbob/types': 4.4.0
 
   '@bbob/types@4.4.0': {}
@@ -9347,7 +9347,7 @@ snapshots:
       entities: 4.5.0
       eslint: 10.8.0
       find-up-simple: 1.0.1
-      globals: 17.7.0
+      globals: 17.8.0
       indent-string: 5.0.0
       is-builtin-module: 5.0.0
       is-identifier: 1.1.0
@@ -9668,7 +9668,7 @@ snapshots:
 
   globals@15.15.0: {}
 
-  globals@17.7.0: {}
+  globals@17.8.0: {}
 
   globrex@0.1.2: {}
 
