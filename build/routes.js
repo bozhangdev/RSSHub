@@ -89313,19 +89313,8 @@ export default {
   },
   "people": {
     "routes": {
-      "/:site?/:category{.+}?": {
-        "path": "/:site?/:category{.+}?",
-        "name": "首页头条",
-        "maintainers": [
-          "nczitzk",
-          "pseudoyu"
-        ],
-        "example": "/people",
-        "location": "index.ts",
-        "module": () => import('@/routes/people/index.ts')
-      },
-      "/liuyan/:id/:state?": {
-        "path": "/liuyan/:id/:state?",
+      "/liuyan/:id?/:state?": {
+        "path": "/liuyan/:id?/:state?",
         "categories": [
           "traditional-media"
         ],
@@ -89342,21 +89331,26 @@ export default {
           "supportPodcast": false,
           "supportScihub": false
         },
-        "radar": [
-          {
-            "source": [
-              "liuyan.people.com.cn/"
-            ]
-          }
-        ],
         "name": "领导留言板",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "url": "liuyan.people.com.cn/",
         "description": "| 全部 | 待回复 | 办理中 | 已办理 |\n| ---- | ------ | ------ | ------ |\n| 1    | 2      | 3      | 4      |",
         "location": "liuyan.ts",
         "module": () => import('@/routes/people/liuyan.ts')
+      },
+      "/:site?/:category{.+}?": {
+        "path": "/:site?/:category{.+}?",
+        "name": "首页头条",
+        "maintainers": [
+          "nczitzk",
+          "pseudoyu"
+        ],
+        "example": "/people",
+        "location": "index.ts",
+        "module": () => import('@/routes/people/index.ts')
       },
       "/paper/:page?": {
         "path": "/paper/:page?",
@@ -89405,16 +89399,16 @@ export default {
         "radar": [
           {
             "source": [
-              "people.com.cn/"
+              "jhsjk.people.cn/"
             ],
-            "target": "/:site?/:category?"
+            "target": "/xjpjh"
           }
         ],
         "name": "习近平系列重要讲话",
         "maintainers": [
           "LogicJake"
         ],
-        "url": "people.com.cn/",
+        "url": "jhsjk.people.cn",
         "location": "xjpjh.ts",
         "module": () => import('@/routes/people/xjpjh.ts')
       }
