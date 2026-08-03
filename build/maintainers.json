@@ -6110,6 +6110,9 @@
   "/people/liuyan/:id/:state?": [
     "nczitzk"
   ],
+  "/people/paper/:page?": [
+    "pseudoyu"
+  ],
   "/people/xjpjh/:keyword?/:year?": [
     "LogicJake"
   ],

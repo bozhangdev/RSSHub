@@ -89358,6 +89358,32 @@
         "location": "liuyan.ts",
         "module": "() => import('@/routes/people/liuyan.ts')"
       },
+      "/paper/:page?": {
+        "path": "/paper/:page?",
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/people/paper",
+        "parameters": {
+          "page": "版面编号，如 `01`；使用 `all` 或留空获取全部版面"
+        },
+        "radar": [
+          {
+            "source": [
+              "paper.people.com.cn/rmrb/pc/layout/index.html"
+            ],
+            "target": "/paper"
+          }
+        ],
+        "name": "人民日报电子版",
+        "maintainers": [
+          "pseudoyu"
+        ],
+        "url": "paper.people.com.cn/rmrb/pc/layout/index.html",
+        "description": "获取当日《人民日报》全部版面或指定版面的文章。",
+        "location": "paper.ts",
+        "module": "() => import('@/routes/people/paper.ts')"
+      },
       "/xjpjh/:keyword?/:year?": {
         "path": "/xjpjh/:keyword?/:year?",
         "categories": [
