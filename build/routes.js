@@ -7655,7 +7655,7 @@ export default {
           "ladeng07"
         ],
         "url": "aqicn.org",
-        "descriptions": "\n|   参数   | 污染成分 |\n| -------- | -------- |\n|   pm25   |  PM2.5   |\n|   pm10   |  PM10    |\n|   o3     |  O3      |\n|   no2    |  NO2     |\n|   so2    |  SO2     |\n|   co     |  CO      |\n\n举例: [https://rsshub.app/aqicn/beijing/pm25,pm10](https://rsshub.app/aqicn/beijing/pm25,pm10)\n\n1. 显示单个污染成分，例如「pm25」, [https://rsshub.app/aqicn/beijing/pm25](https://rsshub.app/aqicn/beijing/pm25)\n2. 逗号分隔显示多个污染成分，例如「pm25,pm10」，[https://rsshub.app/aqicn/beijing/pm25,pm10](https://rsshub.app/aqicn/beijing/pm25,pm10)\n3. 城市子站 ID 获取方法：右键显示网页源代码，搜索 \"idx\" （带双冒号），后面的 ID 就是子站的 ID，如你给的链接 ID 是 4258，RSS 地址就是 [https://rsshub.app/aqicn/4258](https://rsshub.app/aqicn/4258)\n",
+        "description": "| 参数 | 污染成分 |\n| ---- | -------- |\n| pm25 | PM2.5    |\n| pm10 | PM10     |\n| o3   | O3       |\n| no2  | NO2      |\n| so2  | SO2      |\n| co   | CO       |\n\n举例: <https://rsshub.app/aqicn/beijing/pm25,pm10>\n\n1. 显示单个污染成分，例如「pm25」, <https://rsshub.app/aqicn/beijing/pm25>\n2. 逗号分隔显示多个污染成分，例如「pm25,pm10」，<https://rsshub.app/aqicn/beijing/pm25,pm10>\n3. 城市子站 ID 获取方法：右键显示网页源代码，搜索 \"idx\" （带双冒号），后面的 ID 就是子站的 ID，如你给的链接 ID 是 4258，RSS 地址就是 <https://rsshub.app/aqicn/4258>",
         "location": "aqi.ts",
         "module": () => import('@/routes/aqicn/aqi.ts')
       }
@@ -18797,7 +18797,7 @@ export default {
         "maintainers": [
           "nczitzk"
         ],
-        "description": "| id           | 分类 |\n| ------------ | ---- |\n| global       | 最新 |\n| shares       | 股市 |\n| bonds        | 债市 |\n| commodities  | 商品 |\n| forex        | 外汇 |\n| enterprise   | 公司 |\n| asset-manage | 资管 |\n| tmt          | 科技 |\n| estate       | 地产 |\n| car          | 汽车 |\n| medicine     | 医药 |",
+        "description": "| id           | 分类  |\n| ------------ | ----- |\n| global       | 最新  |\n| shares       | 股市  |\n| bonds        | 债市  |\n| commodities  | 商品  |\n| forex        | 外汇  |\n| finance      | 金融  |\n| enterprise   | 公司  |\n| asset-manage | 资管  |\n| tmt          | 科技  |\n| ai           | 硬 AI |\n| estate       | 地产  |\n| car          | 汽车  |\n| medicine     | 医药  |",
         "location": "news.ts",
         "module": () => import('@/routes/wallstreetcn/news.ts')
       },
@@ -21649,6 +21649,29 @@ export default {
         "view": 5,
         "location": "crowdfunding.ts",
         "module": () => import('@/routes/mi/crowdfunding.ts')
+      },
+      "/newproducts": {
+        "path": "/newproducts",
+        "categories": [
+          "shopping"
+        ],
+        "example": "/mi/newproducts",
+        "name": "小米上新",
+        "maintainers": [
+          "nuomi1"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "view": 5,
+        "location": "newproducts.ts",
+        "module": () => import('@/routes/mi/newproducts.ts')
       }
     },
     "apiRoutes": {},
@@ -24740,7 +24763,7 @@ export default {
           "supportBT": false,
           "supportPodcast": false,
           "supportScihub": false,
-          "nfsw": true
+          "nsfw": true
         },
         "radar": [
           {
@@ -29471,6 +29494,47 @@ export default {
     "apiRoutes": {},
     "name": "安徽建筑大学",
     "url": "news.ahjzu.edu.cn",
+    "lang": "zh-CN"
+  },
+  "ahstu": {
+    "routes": {
+      "/:type?": {
+        "path": "/:type?",
+        "categories": [
+          "university"
+        ],
+        "example": "/ahstu/akyw",
+        "parameters": {
+          "type": "栏目类型，见下表，默认为 `akyw`"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.ahstu.edu.cn/index/:type.htm"
+            ],
+            "target": "/:type"
+          }
+        ],
+        "name": "官网通知与新闻",
+        "maintainers": [
+          "JizzCruiy"
+        ],
+        "description": "| 栏目     | type |\n| -------- | ---- |\n| 安科要闻 | akyw |\n| 通知公告 | tzgg |\n| 学术安科 | xsak |\n| 校园动态 | xydt |\n| 媒体聚焦 | mtak |\n| 人物风采 | rwfc |\n| 视觉校园 | sjxy |",
+        "location": "index.ts",
+        "module": () => import('@/routes/ahstu/index.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "安徽科技工程大学",
+    "url": "ahstu.edu.cn",
     "lang": "zh-CN"
   },
   "ai-bot": {
@@ -34355,14 +34419,44 @@ export default {
   },
   "baidu": {
     "routes": {
-      "/gushitong/index": {
-        "path": "/gushitong/index",
+      "/gushitong/index/:market?": {
+        "path": "/gushitong/index/:market?",
         "categories": [
           "finance"
         ],
         "view": 5,
         "example": "/baidu/gushitong/index",
-        "parameters": {},
+        "parameters": {
+          "market": {
+            "description": "市场分类，默认为亚洲市场，即上证指数、深圳成指、恒生指数、富时中国A50、日经225指数和韩国综合指数",
+            "options": [
+              {
+                "label": "亚洲",
+                "value": "asia"
+              },
+              {
+                "label": "美洲",
+                "value": "america"
+              },
+              {
+                "label": "欧非",
+                "value": "europeafrica"
+              },
+              {
+                "label": "外汇",
+                "value": "foreign"
+              },
+              {
+                "label": "债券",
+                "value": "bond"
+              },
+              {
+                "label": "其他",
+                "value": "other"
+              }
+            ]
+          }
+        },
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
@@ -34374,15 +34468,16 @@ export default {
         "radar": [
           {
             "source": [
-              "gushitong.baidu.com/"
+              "finance.baidu.com/"
             ]
           }
         ],
         "name": "首页指数",
         "maintainers": [
-          "CaoMeiYouRen"
+          "CaoMeiYouRen",
+          "hutianyu2006"
         ],
-        "url": "gushitong.baidu.com/",
+        "url": "finance.baidu.com/",
         "location": "gushitong/index.tsx",
         "module": () => import('@/routes/baidu/gushitong/index.tsx')
       },
@@ -38627,8 +38722,6 @@ export default {
         "example": "/bupt/jwc/tzgg",
         "parameters": {
           "type": {
-            "type": "string",
-            "optional": false,
             "description": "信息类型，可选值：tzgg（通知公告），xwzx（新闻资讯）"
           }
         },
@@ -58479,7 +58572,7 @@ export default {
         "parameters": {
           "type": "通知类型，留空则获取所有分类"
         },
-        "feature": {
+        "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
           "antiCrawler": false,
@@ -89347,8 +89440,8 @@ export default {
   },
   "people": {
     "routes": {
-      "/liuyan/:id?/:state?": {
-        "path": "/liuyan/:id?/:state?",
+      "/liuyan/:id/:state?": {
+        "path": "/liuyan/:id/:state?",
         "categories": [
           "traditional-media"
         ],
@@ -105921,15 +106014,17 @@ export default {
   },
   "tsinghua": {
     "routes": {
-      "/lib/tzgg/:category": {
-        "path": "/lib/tzgg/:category",
+      "/lib/tzgg/:category?": {
+        "path": "/lib/tzgg/:category?",
+        "url": "lib.tsinghua.edu.cn",
         "categories": [
           "university"
         ],
         "example": "/tsinghua/lib/tzgg/qtkx",
         "parameters": {
-          "category": "分类，可在对应分类页 URL 中找到"
+          "category": "分类，可在对应分类页 URL 中找到，留空则获取全局通知公告"
         },
+        "description": "| 全部 | 开馆通知 | 施工维修 | 服务通知 | 违规通报 | 清图快讯 | 馆际通知 |\n| ---- | -------- | -------- | -------- | -------- | -------- | -------- |\n| 留空 | kgtz     | sgwx     | fwtz     | wgtb     | qtkx     | gjtz     |",
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
@@ -105941,13 +106036,15 @@ export default {
         "radar": [
           {
             "source": [
-              "lib.tsinghua.edu.cn/tzgg/:category"
+              "lib.tsinghua.edu.cn/tzgg/:category",
+              "lib.tsinghua.edu.cn/tzgg.htm"
             ]
           }
         ],
         "name": "图书馆通知公告",
         "maintainers": [
-          "linsenwang"
+          "linsenwang",
+          "Aquarius-Situla"
         ],
         "location": "lib/tzgg.ts",
         "module": () => import('@/routes/tsinghua/lib/tzgg.ts')
@@ -106038,11 +106135,43 @@ export default {
         "url": "www.tsinghua.edu.cn/news.htm",
         "location": "news.ts",
         "module": () => import('@/routes/tsinghua/news.ts')
+      },
+      "/thuhs/:category?": {
+        "path": "/thuhs/:category?",
+        "categories": [
+          "university"
+        ],
+        "example": "/tsinghua/thuhs/tzgg",
+        "parameters": {
+          "category": "分类，见下表，留空则默认获取通知公告"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.qhfz.edu.cn/:category.htm"
+            ]
+          }
+        ],
+        "name": "附属中学",
+        "maintainers": [
+          "Aquarius-Situla"
+        ],
+        "description": "| 通知公告 | 学生活动 | 教师风采 | 新闻动态 |\n| -------- | -------- | -------- | -------- |\n| tzgg     | xstd     | jsfc     | xwdt     |",
+        "location": "thuhs.ts",
+        "module": () => import('@/routes/tsinghua/thuhs.ts')
       }
     },
     "apiRoutes": {},
     "name": "清华大学",
-    "url": "tsinghua.edu.cn",
+    "url": "www.tsinghua.edu.cn",
     "categories": [
       "university"
     ],
@@ -124622,7 +124751,9 @@ export default {
         ],
         "radar": [
           {
-            "source": "gzw.cq.gov.cn/*category",
+            "source": [
+              "gzw.cq.gov.cn/*category"
+            ],
             "target": "/gzw/*category"
           }
         ],
@@ -126882,6 +127013,29 @@ export default {
   },
   "gov/miit": {
     "routes": {
+      "/zcwj": {
+        "path": "/zcwj",
+        "categories": [
+          "government"
+        ],
+        "example": "/gov/miit/zcwj",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "政策文件",
+        "maintainers": [
+          "Yoge-Code",
+          "hutianyu2006"
+        ],
+        "location": "zcwj.ts",
+        "module": () => import('@/routes/gov/miit/zcwj.ts')
+      },
       "/wjfb/:ministry": {
         "path": "/wjfb/:ministry",
         "categories": [
@@ -126986,28 +127140,6 @@ export default {
         ],
         "location": "zcjd.ts",
         "module": () => import('@/routes/gov/miit/zcjd.ts')
-      },
-      "/zcwj": {
-        "path": "/zcwj",
-        "categories": [
-          "government"
-        ],
-        "example": "/gov/miit/zcwj",
-        "parameters": {},
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "name": "政策文件",
-        "maintainers": [
-          "Yoge-Code"
-        ],
-        "location": "zcwj.ts",
-        "module": () => import('@/routes/gov/miit/zcwj.ts')
       }
     },
     "apiRoutes": {},
@@ -142378,6 +142510,7 @@ export default {
     "routes": {
       "/:id/:params?": {
         "path": "/:id/:params?",
+        "example": "/test/1",
         "name": "Test",
         "maintainers": [
           "DIYgod",
@@ -143111,11 +143244,13 @@ export default {
           "supportPodcast": false,
           "supportScihub": false
         },
-        "radar": {
-          "source": [
-            "www.tmtpost.com"
-          ]
-        },
+        "radar": [
+          {
+            "source": [
+              "www.tmtpost.com"
+            ]
+          }
+        ],
         "name": "快报",
         "maintainers": [
           "defp"
