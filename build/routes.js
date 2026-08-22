@@ -60982,6 +60982,58 @@ export default {
     "description": "中国粮食信息网",
     "lang": "zh-CN"
   },
+  "grandcanalmuseum": {
+    "routes": {
+      "/linzhantezhan": {
+        "path": "/linzhantezhan",
+        "categories": [
+          "travel"
+        ],
+        "example": "/grandcanalmuseum/linzhantezhan",
+        "radar": [
+          {
+            "source": [
+              "www.grandcanalmuseum.cn/linzhantezhan.html"
+            ],
+            "target": "/linzhantezhan"
+          }
+        ],
+        "name": "临展特展",
+        "maintainers": [
+          "magazian"
+        ],
+        "location": "linzhantezhan.tsx",
+        "module": () => import('@/routes/grandcanalmuseum/linzhantezhan.tsx')
+      },
+      "/yunboxinwen": {
+        "path": "/yunboxinwen",
+        "categories": [
+          "travel"
+        ],
+        "example": "/grandcanalmuseum/yunboxinwen",
+        "radar": [
+          {
+            "source": [
+              "www.grandcanalmuseum.cn/yunboxinwen.html"
+            ],
+            "target": "/yunboxinwen"
+          }
+        ],
+        "name": "运博新闻",
+        "maintainers": [
+          "magazian"
+        ],
+        "location": "yunboxinwen.ts",
+        "module": () => import('@/routes/grandcanalmuseum/yunboxinwen.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "China Grand Canal Museum",
+    "url": "www.grandcanalmuseum.cn",
+    "zh": {
+      "name": "中国大运河博物馆"
+    }
+  },
   "greasyfork": {
     "routes": {
       "/scripts/:script/feedback": {
@@ -94556,6 +94608,50 @@ export default {
     "apiRoutes": {},
     "name": "Rule34Video",
     "url": "rule34video.com",
+    "lang": "en"
+  },
+  "rumble": {
+    "routes": {
+      "/c/:channel/:embed?": {
+        "path": "/c/:channel/:embed?",
+        "categories": [
+          "multimedia"
+        ],
+        "view": 3,
+        "name": "Channel",
+        "maintainers": [
+          "luckycold"
+        ],
+        "example": "/rumble/c/MikhailaPeterson",
+        "parameters": {
+          "channel": "Channel slug from `https://rumble.com/c/<channel>`",
+          "embed": "Default to not embed the video, set to `embed` to enable embedding"
+        },
+        "description": "Fetches full Rumble video descriptions without embedding the player by default.",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "rumble.com/c/:channel",
+              "rumble.com/c/:channel/videos"
+            ],
+            "target": "/c/:channel"
+          }
+        ],
+        "location": "channel.ts",
+        "module": () => import('@/routes/rumble/channel.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "Rumble",
+    "url": "rumble.com",
     "lang": "en"
   },
   "rustcc": {

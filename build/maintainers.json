@@ -4252,6 +4252,12 @@
   "/grainoil/:category/:id": [
     "nczitzk"
   ],
+  "/grandcanalmuseum/linzhantezhan": [
+    "magazian"
+  ],
+  "/grandcanalmuseum/yunboxinwen": [
+    "magazian"
+  ],
   "/greasyfork/scripts/:script/feedback": [
     "miles170"
   ],
@@ -6556,6 +6562,9 @@
   ],
   "/rule34video/latest": [
     "ashi-koki"
+  ],
+  "/rumble/c/:channel/:embed?": [
+    "luckycold"
   ],
   "/rustcc/jobs": [
     "CcccFz"
