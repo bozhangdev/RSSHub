@@ -160057,90 +160057,6 @@ export default {
     "url": "youtube.com",
     "lang": "en"
   },
-  "tophub": {
-    "routes": {
-      "/:id": {
-        "path": "/:id",
-        "categories": [
-          "new-media"
-        ],
-        "example": "/tophub/Om4ejxvxEN",
-        "parameters": {
-          "id": "榜单id，可在 URL 中找到"
-        },
-        "features": {
-          "requireConfig": [
-            {
-              "name": "TOPHUB_COOKIE",
-              "optional": true,
-              "description": ""
-            }
-          ],
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "tophub.today/n/:id"
-            ]
-          }
-        ],
-        "name": "榜单",
-        "maintainers": [
-          "LogicJake"
-        ],
-        "location": "index.ts",
-        "module": () => import('@/routes/tophub/index.ts')
-      },
-      "/list/:id": {
-        "path": "/list/:id",
-        "categories": [
-          "new-media"
-        ],
-        "example": "/tophub/list/Om4ejxvxEN",
-        "parameters": {
-          "id": "榜单id，可在 URL 中找到"
-        },
-        "features": {
-          "requireConfig": [
-            {
-              "name": "TOPHUB_COOKIE",
-              "optional": true,
-              "description": ""
-            }
-          ],
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "tophub.today/n/:id"
-            ]
-          }
-        ],
-        "name": "榜单列表",
-        "maintainers": [
-          "akynazh"
-        ],
-        "description": "::: tip\n将榜单条目集合到一个列表中，且有热度排序，可避免推送大量条目。\n:::",
-        "location": "list.tsx",
-        "module": () => import('@/routes/tophub/list.tsx')
-      }
-    },
-    "apiRoutes": {},
-    "name": "今日热榜",
-    "url": "tophub.today",
-    "description": "::: warning\n由于需要登录后的 Cookie 值才能获取原始链接，所以需要自建，需要在环境变量中配置 `TOPHUB_COOKIE`，详情见部署页面的配置模块。\n:::",
-    "lang": "zh-CN"
-  },
   "economist": {
     "routes": {
       "/global-business-review/:language?": {
@@ -160245,5 +160161,89 @@ export default {
     "name": "The Economist",
     "url": "economist.com",
     "lang": "en"
+  },
+  "tophub": {
+    "routes": {
+      "/:id": {
+        "path": "/:id",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/tophub/Om4ejxvxEN",
+        "parameters": {
+          "id": "榜单id，可在 URL 中找到"
+        },
+        "features": {
+          "requireConfig": [
+            {
+              "name": "TOPHUB_COOKIE",
+              "optional": true,
+              "description": ""
+            }
+          ],
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "tophub.today/n/:id"
+            ]
+          }
+        ],
+        "name": "榜单",
+        "maintainers": [
+          "LogicJake"
+        ],
+        "location": "index.ts",
+        "module": () => import('@/routes/tophub/index.ts')
+      },
+      "/list/:id": {
+        "path": "/list/:id",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/tophub/list/Om4ejxvxEN",
+        "parameters": {
+          "id": "榜单id，可在 URL 中找到"
+        },
+        "features": {
+          "requireConfig": [
+            {
+              "name": "TOPHUB_COOKIE",
+              "optional": true,
+              "description": ""
+            }
+          ],
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "tophub.today/n/:id"
+            ]
+          }
+        ],
+        "name": "榜单列表",
+        "maintainers": [
+          "akynazh"
+        ],
+        "description": "::: tip\n将榜单条目集合到一个列表中，且有热度排序，可避免推送大量条目。\n:::",
+        "location": "list.tsx",
+        "module": () => import('@/routes/tophub/list.tsx')
+      }
+    },
+    "apiRoutes": {},
+    "name": "今日热榜",
+    "url": "tophub.today",
+    "description": "::: warning\n由于需要登录后的 Cookie 值才能获取原始链接，所以需要自建，需要在环境变量中配置 `TOPHUB_COOKIE`，详情见部署页面的配置模块。\n:::",
+    "lang": "zh-CN"
   }
 }
