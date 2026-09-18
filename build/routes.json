@@ -31617,6 +31617,40 @@
   },
   "abc-tenpo": {
     "routes": {
+      "/detail/:id": {
+        "path": "/detail/:id",
+        "name": "物件詳細",
+        "url": "www.abc-tenpo.com",
+        "maintainers": [
+          "pseudoyu"
+        ],
+        "example": "/abc-tenpo/detail/62829",
+        "parameters": {
+          "id": {
+            "description": "The numeric 物件 id, i.e. the `62829` in `https://www.abc-tenpo.com/property/view/62829`"
+          }
+        },
+        "description": "One listing on ABC 店舗，for following a single property rather than a whole prefecture.\n\nIts reason to exist is the address. The listing route can only reach the ward (`東京都文京区`) because the visible 所在地 field is truncated and marked 会員限定 — but the document title carries the address in full, `東京都文京区湯島2-31-17・…`, so `address_hint` here reaches the 丁目 **and the 番地**. That makes this one of the few sources that publishes a 番地 to a guest at all.\n\n`_extra` follows the shared listing shape, including 現業態，業種制限，飲食条件 and the 居抜き / 重飲食可 tags; 構造，階建，席数 and 初期費用 are kept in `raw`. 保証金，礼金 and 造作譲渡料 are members-only on this site and stay `null`. The only date the site publishes is 情報更新日，so `listed_at` and `pubDate` are a last-modified date rather than a first-listed one — do not read them as a publication date.",
+        "categories": [
+          "other"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true
+        },
+        "radar": [
+          {
+            "source": [
+              "www.abc-tenpo.com/property/view/:id"
+            ],
+            "target": "/detail/:id"
+          }
+        ],
+        "location": "detail.ts",
+        "module": "() => import('@/routes/abc-tenpo/detail.ts')"
+      },
       "/property/:pref?": {
         "path": "/property/:pref?",
         "name": "新着物件",
@@ -37924,7 +37958,7 @@
             "description": "市区町村 slug as the site spells it — `shinjuku-city`, `minato-city`, `yokohama_naka-city`. Note the underscore in 政令指定都市 slugs; a hyphen there 404s."
           }
         },
-        "description": "貸店舗 listings on アットホーム for one 市区町村 (first page, 30 listings).\n\nThis route needs a browser. The page is Angular Universal SSR sitting behind a JavaScript interstitial, so its first paint can be an 「認証中」 screen that clears itself once the browser finishes loading; only the settled page carries the `#serverApp-state` payload the route reads. The route waits for that element and **throws if it never appears**, so an unsettled page surfaces as an error rather than as a silently empty feed. Expect it to be slower and less reliable than the plain-HTML listing routes, and cache it generously.\n\n`_extra` follows the shared listing shape. `condition` and `prev_business` come from the site's own 店舗プラス block (`isInuki` / `isSkeleton` / `lastTenanto`) rather than being guessed from prose, though most listings leave those unset. 造作価格 is not published here, so `fixtures_transfer_jpy` is always `null`, and `deposit_months` prefers 保証金 with 敷金 as the fallback. `address_hint` reaches the 丁目，and `listed_at` is `null` because 情報公開日 is published only on the detail page, which this route does not open.",
+        "description": "貸店舗 listings on アットホーム for one 市区町村，newest first.\n\nThis route needs a browser. The page is Angular Universal SSR sitting behind a JavaScript interstitial, so its first paint can be an 「認証中」 screen that clears itself once the browser finishes loading; only the settled page carries the `#serverApp-state` payload the route reads. The route waits for that element and **throws if it never appears**, so an unsettled page surfaces as an error rather than as a silently empty feed. Expect it to be slower and less reliable than the plain-HTML listing routes, and cache it generously.\n\n情報公開日，the coordinates and the fee detail exist only on each listing's own page, so the route visits them — reusing one browser tab rather than opening a browser per listing, and caching per listing so a repeated poll only pays for listings it has not seen before. That is why `limit` defaults to 10 rather than the full page of 30.\n\n**The site's own ordering is not chronological**, so the feed is re-sorted by 情報公開日，newest first. Without that a newly published listing could sit well down the list and never reach a monitor watching the first page.\n\n`_extra` follows the shared listing shape: `listed_at` and `pubDate` from 情報公開日，`heavy_food_ok` and `business_limit` from the published notice flags (「飲食店不可」 etc.), `fixtures_transfer_jpy` from 造作譲渡，`tags` from the site's 特徴 list, and `condition` / `prev_business` from the 店舗プラス block (`isInuki` / `isSkeleton` / `lastTenanto`) rather than guessed from prose — though most listings leave those two unset. `deposit_months` prefers 保証金 and falls back to 敷金.\n\n`raw` additionally carries what the shared contract has no field for: `lat` / `lng`, the full 所在地 including its 都道府県，建物名 + 部屋番号，設備，築年月，敷引，償却，その他一時金 and the 定期借家 flag.\n\n| Query   | Description                                               | Default |\n| ------- | --------------------------------------------------------- | ------- |\n| `limit` | Listings to enrich (one detail page each, cached), max 30 | 10      |",
         "categories": [
           "other"
         ],
@@ -42554,6 +42588,62 @@
   },
   "bukenavi": {
     "routes": {
+      "/detail/:id/:region?": {
+        "path": "/detail/:id/:region?",
+        "name": "物件詳細",
+        "url": "bukenavi.jp",
+        "maintainers": [
+          "pseudoyu"
+        ],
+        "example": "/bukenavi/detail/54379",
+        "parameters": {
+          "id": {
+            "description": "The numeric 物件 id, i.e. the `54379` in `https://bukenavi.jp/kanto/object/54379`"
+          },
+          "region": {
+            "description": "Region the listing belongs to; defaults to `kanto`",
+            "default": "kanto",
+            "options": [
+              {
+                "value": "kanto",
+                "label": "kanto"
+              },
+              {
+                "value": "kansai",
+                "label": "kansai"
+              },
+              {
+                "value": "tokai",
+                "label": "tokai"
+              },
+              {
+                "value": "kyushu",
+                "label": "kyushu"
+              }
+            ]
+          }
+        },
+        "description": "One listing on ぶけなび，for following a single property rather than a whole area — a listing's 賃料 and availability change over its life.\n\nIt adds what the area route's cards omit: 乗降者数 for the nearest station, 構造，竣工年月，立地，間口，業種，不可業態，営業年数 and 特記事項，plus exact 面積 and 階数.\n\n**It does not improve the address.** ぶけなび truncates 住所 to the 町 for guests and says so on the page — 「東京都新宿区歌舞伎町 ※詳細はお問い合わせください（住所詳細は会員限定）」 — so the 丁目 is unreachable without an account, and `address_hint` stops at the 町 here exactly as it does on the area route. 敷金，礼金 and 造作 are likewise absent from the guest view, and the site publishes no listing date, so those fields stay `null`.",
+        "categories": [
+          "other"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true
+        },
+        "radar": [
+          {
+            "source": [
+              "bukenavi.jp/:region/object/:id"
+            ],
+            "target": "/detail/:id/:region"
+          }
+        ],
+        "location": "detail.ts",
+        "module": "() => import('@/routes/bukenavi/detail.ts')"
+      },
       "/object/:region?/:pref?/:city?": {
         "path": "/object/:region?/:pref?/:city?",
         "name": "新着物件",
@@ -72706,6 +72796,40 @@
   },
   "i-tenpo": {
     "routes": {
+      "/detail/:id": {
+        "path": "/detail/:id",
+        "name": "物件詳細",
+        "url": "www.i-tenpo.com",
+        "maintainers": [
+          "pseudoyu"
+        ],
+        "example": "/i-tenpo/detail/99523",
+        "parameters": {
+          "id": {
+            "description": "The numeric 物件 id, i.e. the `99523` in `https://www.i-tenpo.com/t99523`"
+          }
+        },
+        "description": "One listing on 居抜き店舗.com, for following a single property rather than a whole ward — a listing's 賃料，引渡状態 and availability all change over its life.\n\nIts one advantage over the ward routes is the address. The page's own 所在地 field stops at the 町 exactly as the list does (`東京都新宿区高田馬場 詳細はログイン後に表示`), but the document title carries the 丁目 — `新宿区高田馬場2丁目/高田馬場駅徒歩2分/…` — so `address_hint` reaches the 丁目 here and only here.\n\n`_extra` follows the shared listing shape. 敷金 and 礼金 are shown only to signed-in users, here as on the list page, so they stay `null`. The site publishes 更新日 but no 掲載日，so `listed_at` and `pubDate` are a last-modified date rather than a first-listed one — do not read them as a publication date.",
+        "categories": [
+          "other"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true
+        },
+        "radar": [
+          {
+            "source": [
+              "www.i-tenpo.com/t:id"
+            ],
+            "target": "/detail/:id"
+          }
+        ],
+        "location": "detail.ts",
+        "module": "() => import('@/routes/i-tenpo/detail.ts')"
+      },
       "/:pref/:city/:type?": {
         "path": "/:pref/:city/:type?",
         "name": "居抜き物件",
