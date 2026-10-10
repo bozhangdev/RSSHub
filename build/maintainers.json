@@ -84,6 +84,9 @@
   "/7gogo/user/:username": [
     "hoilc"
   ],
+  "/acea/publications/:type?": [
+    "DIYgod"
+  ],
   "/alipan/files/:share_id/:parent_file_id?": [
     "DIYgod"
   ],
@@ -2395,9 +2398,6 @@
   ],
   "/accessbriefing/:category{.+}?": [
     "nczitzk"
-  ],
-  "/acea/publications/:type?": [
-    "DIYgod"
   ],
   "/acfun/bangumi/:id/:embed?": [
     "xyqfer"
@@ -7639,6 +7639,9 @@
   "/rsc/journal/:id/:category?": [
     "nczitzk"
   ],
+  "/rsseverything/:language/sharedfeeds": [
+    "AboutRSS"
+  ],
   "/rsshub/routes/:lang?": [
     "DIYgod"
   ],
@@ -8248,25 +8251,6 @@
   "/stdaily/digitalpaper": [
     "lyqluis",
     "KarasuShin"
-  ],
-  "/steam/appcommunityfeed/:appid/:routeParams?": [
-    "NyaaaDoge"
-  ],
-  "/steam/news/:appid/:language?": [
-    "keocheung"
-  ],
-  "/steam/curator/:id/:routeParams?": [
-    "naremloa",
-    "fenxer"
-  ],
-  "/steam/search/:params": [
-    "moppman"
-  ],
-  "/steam/sharefile-changelog/:sharefileID/:routeParams?": [
-    "NyaaaDoge"
-  ],
-  "/steam/workshopsearch/:appid?/:routeParams?": [
-    "NyaaaDoge"
   ],
   "/stheadline/std/:category{.+}?": [
     "TonyRL"
@@ -12094,6 +12078,31 @@
   ],
   "/southcn/nfapp/reporter/:reporter": [
     "TimWu007"
+  ],
+  "/steam/appcommunityfeed/:appid/:routeParams?": [
+    "NyaaaDoge"
+  ],
+  "/steam/news/:appid/:language?": [
+    "keocheung"
+  ],
+  "/steam/curator/:id/:routeParams?": [
+    "naremloa",
+    "fenxer"
+  ],
+  "/steam/search/:params": [
+    "moppman"
+  ],
+  "/steam/sharefile-changelog/:sharefileID/:routeParams?": [
+    "NyaaaDoge"
+  ],
+  "/steam/workshopsearch/:appid?/:routeParams?": [
+    "NyaaaDoge"
+  ],
+  "/steam/discussions/:appid/:feature?": [
+    "NekoAria"
+  ],
+  "/steam/discussion/:appid/:feature/:topicId": [
+    "NekoAria"
   ],
   "/stratechery/": [
     "chazeon"

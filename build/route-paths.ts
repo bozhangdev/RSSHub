@@ -2919,6 +2919,7 @@ export type RoutePath =
   | `/rsc/journal/:id/:category?`
   | `/rss/:url{.+}`
   | `/rss3/:account/:network?/:tag?`
+  | `/rsseverything/:language/sharedfeeds`
   | `/rsshub/routes/:lang?`
   | `/rsshub/transform/html/:url/:routeParams`
   | `/rsshub/transform/json/:url/:routeParams`
@@ -3217,6 +3218,8 @@ export type RoutePath =
   | `/stdaily/digitalpaper`
   | `/steam/appcommunityfeed/:appid/:routeParams?`
   | `/steam/curator/:id/:routeParams?`
+  | `/steam/discussion/:appid/:feature/:topicId`
+  | `/steam/discussions/:appid/:feature?`
   | `/steam/news/:appid/:language?`
   | `/steam/search/:params`
   | `/steam/sharefile-changelog/:sharefileID/:routeParams?`
