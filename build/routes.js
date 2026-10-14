@@ -69518,6 +69518,41 @@ export default {
         "location": "user-likes.ts",
         "module": () => import('@/routes/huggingface/user-likes.ts')
       },
+      "/activity/:user/posts": {
+        "path": "/activity/:user/posts",
+        "categories": [
+          "programming"
+        ],
+        "view": 1,
+        "example": "/huggingface/activity/AbstractPhil/posts",
+        "parameters": {
+          "user": "Hugging Face username"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "huggingface.co/:user/activity/posts"
+            ],
+            "target": "/activity/:user/posts"
+          }
+        ],
+        "name": "User Posts Activity",
+        "maintainers": [
+          "qqc20043",
+          "pseudoyu"
+        ],
+        "url": "huggingface.co",
+        "location": "user-posts.ts",
+        "module": () => import('@/routes/huggingface/user-posts.ts')
+      },
       "/blog-community/:sort?": {
         "path": "/blog-community/:sort?",
         "categories": [
@@ -139970,7 +140005,7 @@ export default {
             "target": "/group/topic/:id"
           }
         ],
-        "description": "订阅主帖正文和源页面首屏回帖。主帖标题或正文改变时产生新 GUID，以供阅读器识别更新。只看楼主使用源站的 author=1 页面。源站回帖按从早到晚排序，因此长帖尾页的新回复尚不在本路由范围内。日期保留源站创建时间，不冒充最后更新时间。",
+        "description": "订阅主帖正文和最新一页回帖。源站回帖按从早到晚排序，多页长帖取尾页的回帖。主帖标题或正文改变时产生新 GUID，以供阅读器识别更新。只看楼主使用源站的 author=1 页面。日期保留源站创建时间，不冒充最后更新时间。",
         "location": "other/group-topic.ts",
         "module": () => import('@/routes/douban/other/group-topic.ts')
       },
