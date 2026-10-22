@@ -822,6 +822,7 @@ export type RoutePath =
   | `/cugb/news/:channel?`
   | `/cuilingmag/:category?`
   | `/cuit/cxxww/:category{.+}?`
+  | `/cum.st/:service?/:id?/:type?`
   | `/cupl/jwc`
   | `/curiouscat/user/:id`
   | `/curius/links/:name`
@@ -1253,6 +1254,7 @@ export type RoutePath =
   | `/fzu/:type`
   | `/gab/user/:username`
   | `/galxe/quest/:alias`
+  | `/game-wisdom/:category?`
   | `/gameapps/`
   | `/gamebase/news/:type?/:category?`
   | `/gamegene/news`
@@ -3789,6 +3791,7 @@ export type RoutePath =
   | `/xoyo/jx3/:caty?`
   | `/xsijishe/forum/:fid`
   | `/xsijishe/rank/:type`
+  | `/xsw/:bookId`
   | `/xuangubao/subject/:subject_id`
   | `/xueqiu/column/:id`
   | `/xueqiu/favorite/:id`

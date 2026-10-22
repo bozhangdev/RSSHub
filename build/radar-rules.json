@@ -3657,6 +3657,35 @@
       }
     ]
   },
+  "cum.st": {
+    "_name": "OnlyHeaven",
+    ".": [
+      {
+        "title": "Posts and DMs",
+        "docs": "https://docs.rsshub.app/routes/cum.st",
+        "source": [
+          "/posts"
+        ],
+        "target": "/cum.st/posts"
+      },
+      {
+        "title": "Posts and DMs",
+        "docs": "https://docs.rsshub.app/routes/cum.st",
+        "source": [
+          "/dms"
+        ],
+        "target": "/cum.st/dms"
+      },
+      {
+        "title": "Posts and DMs",
+        "docs": "https://docs.rsshub.app/routes/cum.st",
+        "source": [
+          "/creators/:service/:id"
+        ],
+        "target": "/cum.st/:service/:id"
+      }
+    ]
+  },
   "dataguidance.com": {
     "_name": "DataGuidance",
     "www": [
@@ -22401,6 +22430,27 @@
           "/kx"
         ],
         "target": "/fx678/kx"
+      }
+    ]
+  },
+  "game-wisdom.com": {
+    "_name": "Game Wisdom",
+    ".": [
+      {
+        "title": "Articles",
+        "docs": "https://docs.rsshub.app/routes/game-wisdom",
+        "source": [
+          "/"
+        ],
+        "target": "/game-wisdom/"
+      },
+      {
+        "title": "Articles",
+        "docs": "https://docs.rsshub.app/routes/game-wisdom",
+        "source": [
+          "/category/:category"
+        ],
+        "target": "/game-wisdom/:category"
       }
     ]
   },
@@ -50617,6 +50667,19 @@
           "/kxyj/kydt.htm"
         ],
         "target": "/xmu/kydt"
+      }
+    ]
+  },
+  "xsw.tw": {
+    "_name": "台湾小说网",
+    "m": [
+      {
+        "title": "章节目录",
+        "docs": "https://docs.rsshub.app/routes/xsw",
+        "source": [
+          "/:bookId/"
+        ],
+        "target": "/xsw/:bookId"
       }
     ]
   },

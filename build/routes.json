@@ -13673,6 +13673,56 @@
     "url": "news.cts.com.tw",
     "lang": "zh-TW"
   },
+  "cum.st": {
+    "routes": {
+      "/:service?/:id?/:type?": {
+        "path": "/:service?/:id?/:type?",
+        "categories": [
+          "multimedia"
+        ],
+        "example": "/cum.st/posts",
+        "parameters": {
+          "service": "Platform (`onlyfans`, `fansly`, or `patreon`), or `posts` / `dms` for the latest posts / DMs across all creators (defaults to `posts`)",
+          "id": "Creator ID from the creator URL; required when a platform is specified",
+          "type": "Use `dms` for the creator’s DMs; defaults to posts"
+        },
+        "features": {
+          "nsfw": true
+        },
+        "radar": [
+          {
+            "source": [
+              "cum.st/posts"
+            ],
+            "target": "/posts"
+          },
+          {
+            "source": [
+              "cum.st/dms"
+            ],
+            "target": "/dms"
+          },
+          {
+            "source": [
+              "cum.st/creators/:service/:id"
+            ],
+            "target": "/:service/:id"
+          }
+        ],
+        "name": "Posts and DMs",
+        "maintainers": [
+          "gekangen"
+        ],
+        "description": "Sources\n\n| Latest posts | Latest DMs | OnlyFans creator | Fansly creator | Patreon creator |\n| ------------ | ---------- | ---------------- | -------------- | --------------- |\n| posts        | dms        | onlyfans         | fansly         | patreon         |\n\n::: tip\nWhen **service** is `posts` or `dms`, **id** is not used. For a creator, use `/cum.st/onlyfans/CREATOR_ID` for posts or `/cum.st/onlyfans/CREATOR_ID/dms` for DMs. Replace `onlyfans` with `fansly` or `patreon` for other creators. Available images are included in the feed entries.\n:::",
+        "location": "index.ts",
+        "module": "() => import('@/routes/cum.st/index.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "OnlyHeaven",
+    "url": "cum.st",
+    "lang": "en"
+  },
   "dahecube": {
     "routes": {
       "/:type?": {
@@ -60703,6 +60753,92 @@
     "categories": [
       "social-media"
     ],
+    "lang": "en"
+  },
+  "game-wisdom": {
+    "routes": {
+      "/:category?": {
+        "path": "/:category?",
+        "name": "Articles",
+        "url": "game-wisdom.com",
+        "maintainers": [
+          "mcdp-adk"
+        ],
+        "example": "/game-wisdom",
+        "parameters": {
+          "category": {
+            "description": "Category. Omit for the latest articles.",
+            "options": [
+              {
+                "value": "analysis",
+                "label": "Analysis"
+              },
+              {
+                "value": "critical",
+                "label": "Critical Pieces"
+              },
+              {
+                "value": "general",
+                "label": "General"
+              },
+              {
+                "value": "guest",
+                "label": "Guest Pieces"
+              },
+              {
+                "value": "podcast",
+                "label": "Podcast"
+              },
+              {
+                "value": "series",
+                "label": "Series"
+              },
+              {
+                "value": "spotlight",
+                "label": "Spotlight"
+              },
+              {
+                "value": "videos",
+                "label": "Videos"
+              }
+            ]
+          }
+        },
+        "description": "Game Wisdom's official RSS feeds only include excerpts. This route fetches the full article body from each article page.",
+        "categories": [
+          "game"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "game-wisdom.com/"
+            ],
+            "target": "/"
+          },
+          {
+            "source": [
+              "game-wisdom.com/category/:category"
+            ],
+            "target": "/:category"
+          }
+        ],
+        "view": 0,
+        "location": "index.ts",
+        "module": "() => import('@/routes/game-wisdom/index.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "Game Wisdom",
+    "url": "game-wisdom.com",
     "lang": "en"
   },
   "gameapps": {
@@ -128412,6 +128548,48 @@
     "name": "司机社",
     "url": "xsijishe.com",
     "lang": "zh-CN"
+  },
+  "xsw": {
+    "routes": {
+      "/:bookId": {
+        "path": "/:bookId",
+        "categories": [
+          "reading"
+        ],
+        "example": "/xsw/17301350",
+        "parameters": {
+          "bookId": "书籍编号，见网址如 /17301350/ 中的数字"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "m.xsw.tw/:bookId/"
+            ]
+          }
+        ],
+        "name": "章节目录",
+        "maintainers": [
+          "xbpk3t"
+        ],
+        "location": "index.ts",
+        "module": "() => import('@/routes/xsw/index.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "台湾小说网",
+    "url": "m.xsw.tw",
+    "categories": [
+      "reading"
+    ],
+    "lang": "zh-TW"
   },
   "xueqiu": {
     "routes": {

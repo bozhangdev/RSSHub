@@ -1155,6 +1155,9 @@
   "/cts/:category": [
     "miles170"
   ],
+  "/cum.st/:service?/:id?/:type?": [
+    "gekangen"
+  ],
   "/dahecube/:type?": [
     "linbuxiao"
   ],
@@ -4421,6 +4424,9 @@
   ],
   "/gab/user/:username": [
     "zphw"
+  ],
+  "/game-wisdom/:category?": [
+    "mcdp-adk"
   ],
   "/gameapps/": [
     "TonyRL"
@@ -9143,6 +9149,9 @@
   "/xsijishe/rank/:type": [
     "akynazh",
     "AiraNadih"
+  ],
+  "/xsw/:bookId": [
+    "xbpk3t"
   ],
   "/xueqiu/user_stock/:id": [
     "hillerliao"
