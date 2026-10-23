@@ -94955,6 +94955,39 @@ export default {
     "url": "nytimes.com",
     "lang": "en"
   },
+  "oaktree": {
+    "routes": {
+      "/insights": {
+        "path": "/insights",
+        "name": "Insights",
+        "url": "www.oaktreecapital.com/insights",
+        "maintainers": [
+          "argsno"
+        ],
+        "example": "/oaktree/insights",
+        "description": "Includes Howard Marks memos, market commentary, education and press mentions. Items are categorised by content type (`memos`, `press`, ...) and media type (`article`, `audio`, `video`), so both can be filtered with the common `filter_category` / `filterout_category` parameters. Full text is fetched from each insight page, while press items link to external websites. The latest 30 entries are returned by default, use the `limit` parameter for more.",
+        "categories": [
+          "finance"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.oaktreecapital.com/insights"
+            ]
+          }
+        ],
+        "location": "insights.ts",
+        "module": () => import('@/routes/oaktree/insights.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "Oaktree Capital",
+    "url": "www.oaktreecapital.com",
+    "categories": [
+      "finance"
+    ],
+    "lang": "en"
+  },
   "obsidian": {
     "routes": {
       "/plugins": {
@@ -97697,6 +97730,43 @@ export default {
     "apiRoutes": {},
     "name": "普世社会科学研究所",
     "url": "www.pacilution.com"
+  },
+  "panasonic": {
+    "routes": {
+      "/firmware": {
+        "path": "/firmware",
+        "name": "Camera and lens firmware",
+        "categories": [
+          "program-update"
+        ],
+        "example": "/panasonic/firmware",
+        "maintainers": [
+          "fdkevin0"
+        ],
+        "features": {
+          "supportRadar": true
+        },
+        "radar": [
+          {
+            "source": [
+              "av.jpn.support.panasonic.com/support/global/cs/dsc/download/top.html",
+              "av.jpn.support.panasonic.com/support/global/cs/dsc/download/index4.html",
+              "av.jpn.support.panasonic.com/support/global/cs/dsc/download/index.html",
+              "av.jpn.support.panasonic.com/support/global/cs/dsc/download/index2.html",
+              "av.jpn.support.panasonic.com/support/global/cs/dsc/download/index5.html"
+            ],
+            "target": "/firmware"
+          }
+        ],
+        "description": "Latest listed firmware for camera bodies and interchangeable lenses, including LEICA DG. Historical releases and camera software updates are excluded. Use common parameters to filter models, for example `?filter_title=^DC-S5M2%20`, or lenses with `?filter_title=^(S-|H-)`. Intermediate releases can be missed if a newer version replaces them between polls.",
+        "location": "firmware.ts",
+        "module": () => import('@/routes/panasonic/firmware.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "Panasonic",
+    "url": "av.jpn.support.panasonic.com",
+    "lang": "en"
   },
   "papers": {
     "routes": {

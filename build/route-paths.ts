@@ -2592,6 +2592,7 @@ export type RoutePath =
   | `/nytimes/daily_briefing_chinese`
   | `/nytimes/rss/:cat?`
   | `/nytimes/wirecutter`
+  | `/oaktree/insights`
   | `/obsidian/plugins`
   | `/obsidian/publish/:id`
   | `/obsidian/themes`
@@ -2667,6 +2668,7 @@ export type RoutePath =
   | `/p-articles/section/:section`
   | `/p-bandai/new`
   | `/pacilution/latest`
+  | `/panasonic/firmware`
   | `/panewslab/author/:id`
   | `/panewslab/column/:id`
   | `/panewslab/news`
