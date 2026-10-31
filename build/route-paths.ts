@@ -514,6 +514,7 @@ export type RoutePath =
   | `/caixin/latest`
   | `/caixin/weekly`
   | `/caixinglobal/latest`
+  | `/calif/research`
   | `/camchina/:id?`
   | `/canada.ca/news/:lang/:department?`
   | `/canaeru/:pref?/:city?`

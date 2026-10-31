@@ -2950,6 +2950,9 @@
   "/caixinglobal/latest": [
     "TonyRL"
   ],
+  "/calif/research": [
+    "shoeper"
+  ],
   "/camchina/:id?": [
     "nczitzk"
   ],

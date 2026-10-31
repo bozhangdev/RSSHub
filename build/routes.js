@@ -40264,6 +40264,50 @@ export default {
     "url": "caixinglobal.com",
     "lang": "en"
   },
+  "calif": {
+    "routes": {
+      "/research": {
+        "path": "/research",
+        "name": "Research",
+        "url": "calif.io",
+        "maintainers": [
+          "shoeper"
+        ],
+        "example": "/calif/research",
+        "description": "Calif security research articles and write-ups.",
+        "categories": [
+          "new-media"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "calif.io/research"
+            ],
+            "target": "/research"
+          }
+        ],
+        "location": "index.ts",
+        "module": () => import('@/routes/calif/index.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "Calif",
+    "url": "calif.io",
+    "categories": [
+      "new-media"
+    ],
+    "description": "Security research from Calif.",
+    "lang": "en-us"
+  },
   "camchina": {
     "routes": {
       "/:id?": {
@@ -135762,7 +135806,7 @@ export default {
     "apiRoutes": {},
     "name": "at home",
     "url": "www.athome.co.jp",
-    "description": "アットホーム — 不動産情報サイト（貸店舗・事業用物件）",
+    "description": "アットホーム — 不動産情報サイト（賃貸・中古マンション・中古一戸建て・貸店舗）",
     "lang": "ja",
     "ja": {
       "name": "アットホーム"
@@ -151956,7 +152000,7 @@ export default {
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
-          "antiCrawler": false,
+          "antiCrawler": true,
           "supportRadar": true
         },
         "radar": [
