@@ -2585,9 +2585,6 @@
   "/atcoder/post/:language?/:keyword?": [
     "nczitzk"
   ],
-  "/athome/rent-store/:pref/:city": [
-    "pseudoyu"
-  ],
   "/augmentcode/blog": [
     "nczitzk"
   ],
@@ -9777,6 +9774,18 @@
   "/asiantolick/tag/:id": [
     "nczitzk"
   ],
+  "/athome/rent-store/:pref/:city": [
+    "pseudoyu"
+  ],
+  "/athome/chintai/:pref/:city": [
+    "pseudoyu"
+  ],
+  "/athome/kodate/chuko/:pref/:city": [
+    "pseudoyu"
+  ],
+  "/athome/mansion/chuko/:pref/:city": [
+    "pseudoyu"
+  ],
   "/bandcamp/live": [
     "nczitzk"
   ],
@@ -11118,6 +11127,15 @@
     "Fatpandac",
     "nczitzk"
   ],
+  "/homes/chintai/:pref/:city": [
+    "pseudoyu"
+  ],
+  "/homes/kodate/chuko/:pref/:city": [
+    "pseudoyu"
+  ],
+  "/homes/mansion/chuko/:pref/:city": [
+    "pseudoyu"
+  ],
   "/hpoi/bannerItem": [
     "DIYgod"
   ],
@@ -12123,6 +12141,15 @@
   ],
   "/subhd/zu/:category?": [
     "nczitzk"
+  ],
+  "/suumo/chintai/:pref/:city": [
+    "pseudoyu"
+  ],
+  "/suumo/chukoikkodate/:pref/:city": [
+    "pseudoyu"
+  ],
+  "/suumo/ms/chuko/:pref/:city": [
+    "pseudoyu"
   ],
   "/szftedu/dongtai": [
     "valuex"
