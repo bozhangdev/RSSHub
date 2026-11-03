@@ -15389,8 +15389,8 @@ export default {
         "location": "literature.ts",
         "module": () => import('@/routes/inspirehep/literature.ts')
       },
-      "/:collection{jobs|seminars|conferences|institutions|experiments|journals}/:q?": {
-        "path": "/:collection{jobs|seminars|conferences|institutions|experiments|journals}/:q?",
+      "/:collection{(?:jobs|seminars|conferences|institutions|experiments|journals)}/:q?": {
+        "path": "/:collection{(?:jobs|seminars|conferences|institutions|experiments|journals)}/:q?",
         "name": "Collection Search",
         "categories": [
           "journal"
@@ -17218,13 +17218,13 @@ export default {
         "maintainers": [
           "emdoe"
         ],
-        "example": "/openalex/s64187185/subfield/2604",
+        "example": "/openalex/s64187185/subfield/1312",
         "parameters": {
           "journals": "Pipe-separated journal source IDs (e.g., s64187185|s123456789)",
           "type": "Optional filter type: subfield, topic, field, or domain",
           "ids": "Optional pipe-separated filter IDs matching the type (e.g., 2604|2605 for subfields)"
         },
-        "description": "Get recent scientific publications from OpenAlex filtered by journal and optionally by topic classification (last 2 weeks).\n\nExamples:\n\n- /openalex/s64187185 - All works from a journal (no topic filter)\n- /openalex/s64187185/subfield/2604 - Filter by subfield\n- /openalex/s64187185|s123456/topic/T10001|T10002 - Filter by topic with multiple journals\n- /openalex/s64187185/field/19 - Filter by field\n- /openalex/s64187185/domain/1 - Filter by domain",
+        "description": "Get recent scientific publications from OpenAlex filtered by journal and optionally by topic classification (last 2 weeks).\n\nExamples:\n\n- /openalex/s64187185 - All works from a journal (no topic filter)\n- /openalex/s64187185/subfield/1312 - Filter by subfield\n- /openalex/s64187185|s123456/topic/T10001|T10002 - Filter by topic with multiple journals\n- /openalex/s64187185/field/19 - Filter by field\n- /openalex/s64187185/domain/1 - Filter by domain",
         "categories": [
           "journal"
         ],
@@ -33801,8 +33801,8 @@ export default {
   },
   "aqara": {
     "routes": {
-      "/:region{cn|kr|eu|us|ru|en}/:type?": {
-        "path": "/:region{cn|kr|eu|us|ru|en}/:type?",
+      "/:region{(?:cn|kr|eu|us|ru|en)}/:type?": {
+        "path": "/:region{(?:cn|kr|eu|us|ru|en)}/:type?",
         "categories": [
           "other"
         ],
