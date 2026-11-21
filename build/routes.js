@@ -84098,6 +84098,66 @@ export default {
     "name": "Maldita.es",
     "url": "maldita.es"
   },
+  "manager-dev": {
+    "routes": {
+      "/newsletter/:sort?": {
+        "path": "/newsletter/:sort?",
+        "name": "Newsletter",
+        "url": "www.manager.dev/newsletter",
+        "example": "/manager-dev/newsletter",
+        "parameters": {
+          "sort": {
+            "description": "Sort order, same as the tabs on the newsletter page",
+            "default": "most-read",
+            "options": [
+              {
+                "value": "most-read",
+                "label": "Most read"
+              },
+              {
+                "value": "newest",
+                "label": "Newest"
+              }
+            ]
+          }
+        },
+        "description": "Full-text posts from the Manager.dev newsletter, either the most-read posts of all time (by view count) or the newest posts. Sponsor blocks are removed.",
+        "categories": [
+          "blog"
+        ],
+        "maintainers": [
+          "Rjnishant530"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.manager.dev/newsletter"
+            ],
+            "target": "/newsletter"
+          }
+        ],
+        "view": 0,
+        "location": "newsletter.ts",
+        "module": () => import('@/routes/manager-dev/newsletter.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "Manager.dev",
+    "url": "www.manager.dev",
+    "categories": [
+      "blog"
+    ],
+    "lang": "en",
+    "description": "A weekly newsletter for engineering managers by Anton Zaides."
+  },
   "manhuagui": {
     "routes": {
       "/comic/:id/:chapterCnt?": {
@@ -125099,6 +125159,84 @@ export default {
     "url": "v2ex.com",
     "lang": "zh-CN"
   },
+  "valueresearchonline": {
+    "routes": {
+      "/knowledge-center/:section": {
+        "path": "/knowledge-center/:section",
+        "name": "Knowledge Center",
+        "url": "www.valueresearchonline.com/knowledge-center/",
+        "example": "/valueresearchonline/knowledge-center/investing-for-income",
+        "categories": [
+          "finance"
+        ],
+        "parameters": {
+          "section": {
+            "description": "Knowledge Center section, the slug after `/knowledge-center/` in the URL",
+            "options": [
+              {
+                "value": "get-started",
+                "label": "Get Started"
+              },
+              {
+                "value": "index-investor",
+                "label": "The Index Investor"
+              },
+              {
+                "value": "invest-like-a-woman",
+                "label": "Invest Like a Woman"
+              },
+              {
+                "value": "investing-for-growth",
+                "label": "Investing for Growth"
+              },
+              {
+                "value": "investing-for-income",
+                "label": "Investing for Income"
+              },
+              {
+                "value": "tax-planning",
+                "label": "Tax Planning"
+              }
+            ]
+          }
+        },
+        "description": "Full-text articles from a Value Research Knowledge Center section, such as [The Index Investor](https://www.valueresearchonline.com/indexinvestor/) or [Investing for Income](https://www.valueresearchonline.com/knowledge-center/investing-for-income/). Video entries include the YouTube player and the transcript. Stories from the Value Research magazines (such as Mutual Fund Insight) are not public, so those items only carry the teaser the site shows. The item list follows the section's own curated RSS feed (20 entries), so it is not strictly ordered by date.",
+        "maintainers": [
+          "Rjnishant530"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.valueresearchonline.com/indexinvestor/"
+            ],
+            "target": "/knowledge-center/index-investor"
+          },
+          {
+            "source": [
+              "www.valueresearchonline.com/knowledge-center/:section/"
+            ],
+            "target": "/knowledge-center/:section"
+          }
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "view": 0,
+        "location": "knowledge-center.ts",
+        "module": () => import('@/routes/valueresearchonline/knowledge-center.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "Value Research",
+    "url": "www.valueresearchonline.com",
+    "lang": "en",
+    "description": "Mutual fund, stock and personal finance research from Value Research, an independent investment research firm in India."
+  },
   "vb-audio": {
     "routes": {
       "/voicemeeter/changelog": {
@@ -165886,24 +166024,12 @@ export default {
         ],
         "parameters": {
           "filter": {
-            "description": "Filter by content type (`article`, `post`, `ebook`) or by tag slug as used in `https://www.tryprofound.com/research?filter=<slug>` (e.g. `answer-engines`, `industry-verticals`, `personal-agents`). Omit or use `all` for everything.",
+            "description": "Tag slug as used in `https://www.tryprofound.com/research?filter=<slug>` (e.g. `answer-engines`, `industry-verticals`, `personal-agents`). Omit or use `all` for every article.",
             "default": "all",
             "options": [
               {
                 "value": "all",
                 "label": "All Research"
-              },
-              {
-                "value": "article",
-                "label": "Articles"
-              },
-              {
-                "value": "post",
-                "label": "Posts"
-              },
-              {
-                "value": "ebook",
-                "label": "E-books"
               },
               {
                 "value": "answer-engines",
@@ -165920,7 +166046,7 @@ export default {
             ]
           }
         },
-        "description": "Items from Profound's Research Hub. Articles include the full text from the Profound blog; LinkedIn posts use the excerpt shown on the Research Hub and e-books use their subtitle. Fetches 20 entries by default; supports the common `limit` parameter.",
+        "description": "Full-text research articles from Profound's Research Hub, fetched from the Profound blog. LinkedIn posts and e-books listed on the hub are not included. Fetches 20 entries by default; supports the common `limit` parameter.",
         "radar": [
           {
             "source": [
